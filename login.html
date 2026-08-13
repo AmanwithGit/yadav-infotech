@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Log in — Doodhwala</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="auth-wrap">
+  <div class="auth-side">
+    <a href="index.html" class="brand" style="color:#fff;"><span class="mark">दू</span> Doodhwala</a>
+    <div>
+      <p class="quote" id="authQuote">“No more missed calls to the milkman. I set my schedule once and it just shows up.”</p>
+      <p class="who" id="authWho">— Priya S., customer in Model Town</p>
+    </div>
+  </div>
+
+  <div class="auth-form-wrap">
+    <div class="auth-card">
+      <span class="eyebrow">I am a…</span>
+      <div class="role-tabs" style="margin-top:14px;">
+        <button data-auth-role="customer" class="active">Customer</button>
+        <button data-auth-role="milkman">Milkman</button>
+      </div>
+
+      <h2 id="authTitle">Welcome back</h2>
+      <p id="authSub">Log in to manage your daily milk.</p>
+
+      <form id="authForm">
+        <div class="field signup-only hidden">
+          <label for="fullName">Full name</label>
+          <input type="text" id="fullName" placeholder="e.g. Priya Sharma">
+        </div>
+
+        <div class="field milkman-only hidden">
+          <label for="dairyName">Dairy / shop name</label>
+          <input type="text" id="dairyName" placeholder="e.g. Ramesh Dairy Farm">
+        </div>
+
+        <div class="field">
+          <label for="phone">Mobile number</label>
+          <input type="tel" id="phone" placeholder="98xxx xxxxx" required>
+        </div>
+
+        <div class="field signup-only hidden">
+          <label for="area">Area / locality</label>
+          <input type="text" id="area" placeholder="e.g. Model Town, Ludhiana">
+        </div>
+
+        <div class="field milkman-only hidden">
+          <label for="areasServed">Areas you deliver to</label>
+          <input type="text" id="areasServed" placeholder="e.g. Model Town, Sarabha Nagar">
+          <p class="help">Add as many localities as you cover — separate with commas.</p>
+        </div>
+
+        <div class="field">
+          <label for="password">Password</label>
+          <input type="password" id="password" placeholder="••••••••" required>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block" id="authSubmit">Log in</button>
+      </form>
+
+      <div class="divider">or</div>
+      <button class="btn btn-ghost btn-block" type="button">Continue with OTP instead</button>
+
+      <p class="foot-link" id="authFootLink">New to Doodhwala? <a href="#" id="toSignup">Sign up</a></p>
+    </div>
+  </div>
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>

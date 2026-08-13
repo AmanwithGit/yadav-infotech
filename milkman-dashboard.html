@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Dairy — Doodhwala</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="app-shell">
+  <!-- ============ SIDEBAR ============ -->
+  <aside class="app-sidebar">
+    <a href="index.html" class="brand"><span class="mark">दू</span> Doodhwala</a>
+    <nav class="side-nav">
+      <a href="milkman-dashboard.html" class="active"><span class="ic">⌂</span> Dashboard</a>
+      <a href="#route-section"><span class="ic">🛣</span> Today's route</a>
+      <a href="#subs-section"><span class="ic">👥</span> Subscribers</a>
+      <a href="#products-section"><span class="ic">🥛</span> My products</a>
+      <a href="#calendar-section"><span class="ic">📅</span> Delivery calendar</a>
+      <a href="#earnings-section"><span class="ic">💰</span> Earnings</a>
+      <a href="#"><span class="ic">👤</span> Shop profile</a>
+    </nav>
+    <div class="side-foot">
+      <div class="side-user">
+        <div class="avatar">RK</div>
+        <div>
+          Ramesh Kumar
+          <small>Model Town, Ludhiana</small>
+        </div>
+      </div>
+      <span class="switch-role">Ordering milk instead? <a href="customer-dashboard.html">Switch to customer view</a></span>
+    </div>
+  </aside>
+
+  <!-- ============ MAIN ============ -->
+  <main class="app-main">
+    <div class="app-topbar">
+      <div>
+        <h1>Good morning, Ramesh</h1>
+        <div class="sub">Tuesday, 14 Aug 2026 · 42 active subscribers</div>
+      </div>
+      <div class="topbar-actions">
+        <div class="search-box">
+          <span>🔍</span>
+          <input type="text" placeholder="Search subscribers…">
+        </div>
+        <button class="btn btn-primary" data-open-modal="productModal">+ Add milk type</button>
+      </div>
+    </div>
+
+    <!-- Stats -->
+    <div class="stat-row">
+      <div class="stat-card">
+        <div class="lbl">Today's deliveries</div>
+        <div class="val">37 / 42</div>
+        <div class="delta up">5 remaining, all before 9 AM</div>
+      </div>
+      <div class="stat-card">
+        <div class="lbl">Litres today</div>
+        <div class="val">64.5 L</div>
+        <div class="delta up">↑ 3.5 L vs yesterday</div>
+      </div>
+      <div class="stat-card">
+        <div class="lbl">Today's revenue</div>
+        <div class="val">₹3,914</div>
+        <div class="delta up">On track for the day</div>
+      </div>
+      <div class="stat-card">
+        <div class="lbl">Rating</div>
+        <div class="val">★ 4.8</div>
+        <div class="delta up">128 reviews</div>
+      </div>
+    </div>
+
+    <!-- Today's route -->
+    <div class="panel" id="route-section">
+      <div class="panel-head">
+        <h3>Today's route — Morning slot</h3>
+        <span class="hint">Sorted by street, 6:00–9:00 AM</span>
+      </div>
+      <div class="filters">
+        <span class="chip active" data-filter="all">All (42)</span>
+        <span class="chip" data-filter="pending">Pending (5)</span>
+        <span class="chip" data-filter="delivered">Delivered (37)</span>
+      </div>
+      <table>
+        <thead>
+          <tr><th></th><th>Customer</th><th>Street</th><th>Milk</th><th>Qty</th><th>Time slot</th><th>Status</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><input type="checkbox" class="route-check" checked></td>
+            <td>Priya Sharma</td><td>Model Town, Phase 2</td><td>Cow</td><td>1.5 L</td><td>6:30–7:30 AM</td>
+            <td><span class="badge green">Delivered</span></td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" class="route-check" checked></td>
+            <td>Anil Bansal</td><td>Model Town, Phase 1</td><td>Buffalo</td><td>2 L</td><td>6:30–7:30 AM</td>
+            <td><span class="badge green">Delivered</span></td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" class="route-check"></td>
+            <td>Neha Gupta</td><td>Model Town, Phase 3</td><td>Toned</td><td>1 L</td><td>7:30–9:00 AM</td>
+            <td><span class="badge gold">Pending</span></td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" class="route-check"></td>
+            <td>Harpreet Singh</td><td>Model Town, Phase 2</td><td>Cow</td><td>1 L</td><td>7:30–9:00 AM</td>
+            <td><span class="badge gold">Pending</span></td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" class="route-check" checked></td>
+            <td>Simran Kaur</td><td>Model Town, Phase 1</td><td>Full Cream</td><td>0.5 L</td><td>6:30–7:30 AM</td>
+            <td><span class="badge green">Delivered</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Subscribers -->
+    <div class="panel" id="subs-section">
+      <div class="panel-head">
+        <h3>All subscribers</h3>
+        <span class="hint">42 active</span>
+      </div>
+      <table>
+        <thead>
+          <tr><th>Customer</th><th>Area</th><th>Milk</th><th>Qty / day</th><th>Schedule</th><th>Next delivery</th><th></th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Priya Sharma</td><td>Model Town, Phase 2</td><td>Cow</td><td>1.5 L</td><td>Mon–Sat</td><td>Tomorrow, 6:30 AM</td><td><button class="btn btn-ghost btn-sm">Message</button></td></tr>
+          <tr><td>Anil Bansal</td><td>Model Town, Phase 1</td><td>Buffalo</td><td>2 L</td><td>Daily</td><td>Tomorrow, 6:30 AM</td><td><button class="btn btn-ghost btn-sm">Message</button></td></tr>
+          <tr><td>Neha Gupta</td><td>Model Town, Phase 3</td><td>Toned</td><td>1 L</td><td>Mon, Wed, Fri</td><td>Thu, 7:30 AM</td><td><button class="btn btn-ghost btn-sm">Message</button></td></tr>
+          <tr><td>Harpreet Singh</td><td>Model Town, Phase 2</td><td>Cow</td><td>1 L</td><td>Daily</td><td>Tomorrow, 7:30 AM</td><td><button class="btn btn-ghost btn-sm">Message</button></td></tr>
+          <tr><td>Simran Kaur</td><td>Model Town, Phase 1</td><td>Full Cream</td><td>0.5 L</td><td>Tue, Thu, Sat</td><td>Thu, 6:30 AM</td><td><button class="btn btn-ghost btn-sm">Message</button></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Products -->
+    <div class="panel" id="products-section">
+      <div class="panel-head">
+        <h3>My products &amp; pricing</h3>
+        <span class="hint">Shown to customers when they subscribe</span>
+      </div>
+      <table>
+        <thead>
+          <tr><th>Milk type</th><th>Price / litre</th><th>Daily capacity</th><th>Availability</th><th></th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Cow Milk</td><td>₹58</td><td>40 L</td><td><span class="badge green">Available</span></td><td><button class="btn btn-ghost btn-sm">Edit</button></td></tr>
+          <tr><td>Buffalo Milk</td><td>₹66</td><td>25 L</td><td><span class="badge green">Available</span></td><td><button class="btn btn-ghost btn-sm">Edit</button></td></tr>
+          <tr><td>Toned Milk</td><td>₹50</td><td>15 L</td><td><span class="badge green">Available</span></td><td><button class="btn btn-ghost btn-sm">Edit</button></td></tr>
+          <tr><td>Full Cream</td><td>₹70</td><td>10 L</td><td><span class="badge red">Sold out today</span></td><td><button class="btn btn-ghost btn-sm">Edit</button></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Delivery calendar -->
+    <div class="panel" id="calendar-section">
+      <div class="panel-head">
+        <h3>Delivery calendar — August 2026</h3>
+        <span class="hint">All subscribers combined</span>
+      </div>
+      <div class="cal-grid" id="milkmanCalendar"></div>
+      <div class="cal-legend">
+        <span><i style="background:var(--primary-tint); border:1px solid var(--primary);"></i> Fully delivered</span>
+        <span><i style="background:var(--accent-tint); border:1px solid var(--accent);"></i> In progress</span>
+        <span><i style="background:var(--bg-deep);"></i> Skipped stops</span>
+      </div>
+    </div>
+
+    <!-- Earnings -->
+    <div class="panel" id="earnings-section">
+      <div class="panel-head">
+        <h3>Earnings</h3>
+        <span class="hint">Last 6 months</span>
+      </div>
+      <table>
+        <thead><tr><th>Month</th><th>Litres sold</th><th>Subscribers</th><th>Revenue</th><th>Payout status</th></tr></thead>
+        <tbody>
+          <tr><td>August 2026 (est.)</td><td>1,860 L</td><td>42</td><td>₹1,15,320</td><td><span class="badge gold">In progress</span></td></tr>
+          <tr><td>July 2026</td><td>1,920 L</td><td>40</td><td>₹1,18,900</td><td><span class="badge green">Paid out</span></td></tr>
+          <tr><td>June 2026</td><td>1,810 L</td><td>38</td><td>₹1,10,540</td><td><span class="badge green">Paid out</span></td></tr>
+          <tr><td>May 2026</td><td>1,770 L</td><td>36</td><td>₹1,07,220</td><td><span class="badge green">Paid out</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+</div>
+
+<!-- ============ ADD PRODUCT MODAL ============ -->
+<div class="modal-overlay" id="productModal">
+  <div class="modal">
+    <div class="modal-head">
+      <h3>Add a milk type</h3>
+      <button class="modal-close" data-close-modal="productModal">&times;</button>
+    </div>
+    <div class="modal-body">
+      <div class="form-grid">
+        <div class="field">
+          <label for="pName">Milk type</label>
+          <select id="pName">
+            <option>A2 Desi Cow</option>
+            <option>Organic Mix</option>
+            <option>Skimmed</option>
+            <option>Custom…</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="pPrice">Price per litre (₹)</label>
+          <input type="number" id="pPrice" placeholder="e.g. 90">
+        </div>
+        <div class="field">
+          <label for="pCapacity">Daily capacity (litres)</label>
+          <input type="number" id="pCapacity" placeholder="e.g. 20">
+        </div>
+        <div class="field">
+          <label for="pAvail">Availability</label>
+          <select id="pAvail">
+            <option>Available</option>
+            <option>Sold out today</option>
+            <option>Paused</option>
+          </select>
+        </div>
+      </div>
+      <div class="field">
+        <label for="pNotes">Notes for customers (optional)</label>
+        <textarea id="pNotes" rows="3" placeholder="e.g. Delivered fresh from morning milking, no additives."></textarea>
+      </div>
+    </div>
+    <div class="modal-foot">
+      <button class="btn btn-ghost" data-close-modal="productModal">Cancel</button>
+      <button class="btn btn-primary" data-close-modal="productModal">Save milk type</button>
+    </div>
+  </div>
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>

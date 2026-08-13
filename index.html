@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Doodhwala — Your milkman, online</title>
+<meta name="description" content="Doodhwala connects local milkmen with households for daily milk delivery — pick your milk, your quantity, your schedule.">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container nav">
+    <a href="index.html" class="brand"><span class="mark">दू</span> Doodhwala</a>
+    <nav class="nav-links">
+      <a href="#how-it-works">How it works</a>
+      <a href="#browse">Find a milkman</a>
+      <a href="#features">Features</a>
+      <a href="#for-milkmen">Sell your milk</a>
+    </nav>
+    <div class="nav-actions">
+      <a class="btn btn-ghost btn-sm" href="login.html?role=customer">Log in</a>
+      <a class="btn btn-primary btn-sm" href="login.html?role=customer">Get started</a>
+      <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <span class="eyebrow">● Now serving Ludhiana &amp; nearby towns</span>
+        <h1>Your milkman, <em>finally</em> online.</h1>
+        <p class="lead">Doodhwala connects households with trusted local milkmen. Choose your milk, set your litres, pick your days — delivered fresh every morning, billed once a month.</p>
+        <div class="hero-ctas">
+          <a href="login.html?role=customer" class="btn btn-primary">I need daily milk</a>
+          <a href="login.html?role=milkman" class="btn btn-accent">I'm a milkman — list me</a>
+        </div>
+        <div class="hero-stats">
+          <div><span class="num">1,200+</span><span class="lbl">Milkmen listed</span></div>
+          <div><span class="num">38,000+</span><span class="lbl">Litres delivered / day</span></div>
+          <div><span class="num">4.8★</span><span class="lbl">Average rating</span></div>
+        </div>
+      </div>
+
+      <div class="ledger-card">
+        <div class="ledger-head">
+          <div>
+            <h3>This week's delivery</h3>
+            <span>Ramesh Kumar · Cow Milk · 1.5 L</span>
+          </div>
+          <span id="ledgerActiveCount" class="eyebrow">5</span>
+        </div>
+        <div class="ledger-grid" id="heroLedger"></div>
+        <div class="ledger-foot">
+          <span>Tap a day to skip or add delivery</span>
+          <strong>₹1,885 / mo</strong>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ HOW IT WORKS ============ -->
+  <section class="section section-alt" id="how-it-works">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">How it works</span>
+        <h2>Set it up once. It shows up every morning.</h2>
+        <p>The same daily habit your family always had with the milkman — just without the missed calls and forgotten chits.</p>
+      </div>
+
+      <div class="role-tabs">
+        <button class="active" data-role-tab="customer">For customers</button>
+        <button data-role-tab="milkman">For milkmen</button>
+      </div>
+
+      <div class="role-panel active" data-role-panel="customer">
+        <div class="steps">
+          <div class="step">
+            <span class="idx">Step 01</span>
+            <h4>Find a milkman near you</h4>
+            <p>Browse verified milkmen in your area by milk type, price and rating.</p>
+          </div>
+          <div class="step">
+            <span class="idx">Step 02</span>
+            <h4>Choose milk, litres &amp; days</h4>
+            <p>Cow, buffalo, toned, A2 or organic — set your quantity and pick daily, alternate, or custom days.</p>
+          </div>
+          <div class="step">
+            <span class="idx">Step 03</span>
+            <h4>Track, pause &amp; pay monthly</h4>
+            <p>See every delivery on your calendar, pause for vacations, and pay one bill at month end.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="role-panel" data-role-panel="milkman">
+        <div class="steps">
+          <div class="step">
+            <span class="idx">Step 01</span>
+            <h4>List your dairy &amp; area</h4>
+            <p>Add the milk types you sell, your prices, and the neighbourhoods you cover.</p>
+          </div>
+          <div class="step">
+            <span class="idx">Step 02</span>
+            <h4>Get subscribers automatically</h4>
+            <p>Customers in your area find and subscribe to you directly — no more door-to-door pitching.</p>
+          </div>
+          <div class="step">
+            <span class="idx">Step 03</span>
+            <h4>Run your route from your phone</h4>
+            <p>See today's deliveries grouped by street, mark them done, and get paid monthly — no notebook needed.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ BROWSE MILKMEN ============ -->
+  <section class="section" id="browse">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Browse</span>
+        <h2>Milkmen near you</h2>
+        <p>Every profile shows real prices, milk types on offer, and ratings from other households.</p>
+      </div>
+      <div class="card-grid" id="milkmanGrid"></div>
+    </div>
+  </section>
+
+  <!-- ============ FEATURES ============ -->
+  <section class="section section-alt" id="features">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Everything a doodhwala relationship needs</span>
+        <h2>Built around how milk actually gets delivered</h2>
+        <p>Not a generic grocery cart — features shaped around daily, recurring, trust-based delivery.</p>
+      </div>
+      <div class="feature-grid">
+        <div class="feature">
+          <div class="fi">⟳</div>
+          <h4>Flexible schedules</h4>
+          <p>Daily, alternate-day, or pick exact days of the week. Change it any time before the next delivery.</p>
+        </div>
+        <div class="feature">
+          <div class="fi">🥛</div>
+          <h4>Multiple milk types</h4>
+          <p>Cow, buffalo, toned, full cream, A2 desi and organic — set per-type pricing and availability.</p>
+        </div>
+        <div class="feature">
+          <div class="fi">⚖</div>
+          <h4>Precise quantities</h4>
+          <p>Order in 0.5 L steps, split across morning and evening delivery slots.</p>
+        </div>
+        <div class="feature">
+          <div class="fi">✈</div>
+          <h4>Vacation pause</h4>
+          <p>Going out of town? Pause any subscription for exact dates — no charge, no calls to make.</p>
+        </div>
+        <div class="feature">
+          <div class="fi">🧾</div>
+          <h4>One monthly bill</h4>
+          <p>Every delivery is logged automatically and billed once a month, same as the old handwritten register.</p>
+        </div>
+        <div class="feature">
+          <div class="fi">📍</div>
+          <h4>Live delivery tracking</h4>
+          <p>See exactly which days were delivered, skipped, or are still pending — right on a calendar.</p>
+        </div>
+        <div class="feature">
+          <div class="fi">★</div>
+          <h4>Ratings &amp; trust</h4>
+          <p>Every milkman is reviewed by real subscribers in the neighbourhood before you commit.</p>
+        </div>
+        <div class="feature">
+          <div class="fi">🛣</div>
+          <h4>Route view for milkmen</h4>
+          <p>Today's deliveries sorted by street and time slot, so the round takes less time, not more.</p>
+        </div>
+        <div class="feature">
+          <div class="fi">💬</div>
+          <h4>Direct messaging</h4>
+          <p>Ask for an extra litre tomorrow or flag a missed delivery — directly, without a phone call.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOR MILKMEN ============ -->
+  <section class="section" id="for-milkmen">
+    <div class="container">
+      <div class="cta-banner">
+        <div>
+          <span class="eyebrow" style="background:rgba(255,255,255,.12); color:#EAF3EC; border-color:rgba(255,255,255,.25);">For milkmen</span>
+          <h3>Stop chasing customers door to door.</h3>
+          <p>List your dairy for free. Set your prices, your areas, your milk types — and let households in your locality subscribe directly to you.</p>
+        </div>
+        <a href="login.html?role=milkman" class="btn btn-accent">List your dairy — it's free</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a href="index.html" class="brand" style="color:#fff; margin-bottom:12px; display:inline-flex;"><span class="mark">दू</span> Doodhwala</a>
+        <p style="color:#9FB2A2; font-size:13.5px; max-width:32ch; margin-top:10px;">The daily milk marketplace connecting local milkmen with the households they serve.</p>
+      </div>
+      <div>
+        <h5>Customers</h5>
+        <ul>
+          <li><a href="#browse">Find a milkman</a></li>
+          <li><a href="login.html?role=customer">How subscriptions work</a></li>
+          <li><a href="login.html?role=customer">Billing &amp; pricing</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Milkmen</h5>
+        <ul>
+          <li><a href="login.html?role=milkman">List your dairy</a></li>
+          <li><a href="#for-milkmen">Why Doodhwala</a></li>
+          <li><a href="login.html?role=milkman">Route &amp; delivery tools</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Company</h5>
+        <ul>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Support</a></li>
+          <li><a href="#">Terms &amp; privacy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Doodhwala. Front-end structure/demo — no live payments or backend connected.</span>
+      <span>Made for households and milkmen in Punjab, and beyond.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>

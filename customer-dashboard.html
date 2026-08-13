@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Milk — Doodhwala</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="app-shell">
+  <!-- ============ SIDEBAR ============ -->
+  <aside class="app-sidebar">
+    <a href="index.html" class="brand"><span class="mark">दू</span> Doodhwala</a>
+    <nav class="side-nav">
+      <a href="customer-dashboard.html" class="active"><span class="ic">⌂</span> Dashboard</a>
+      <a href="#browse-section"><span class="ic">🔍</span> Browse milkmen</a>
+      <a href="#subs-section"><span class="ic">🥛</span> My subscriptions</a>
+      <a href="#calendar-section"><span class="ic">📅</span> Delivery calendar</a>
+      <a href="#billing-section"><span class="ic">🧾</span> Billing</a>
+      <a href="#"><span class="ic">👤</span> Profile</a>
+    </nav>
+    <div class="side-foot">
+      <div class="side-user">
+        <div class="avatar">PS</div>
+        <div>
+          Priya Sharma
+          <small>Model Town, Ludhiana</small>
+        </div>
+      </div>
+      <span class="switch-role">Deliver milk instead? <a href="milkman-dashboard.html">Switch to milkman view</a></span>
+    </div>
+  </aside>
+
+  <!-- ============ MAIN ============ -->
+  <main class="app-main">
+    <div class="app-topbar">
+      <div>
+        <h1>Good morning, Priya</h1>
+        <div class="sub">Tuesday, 14 Aug 2026 · 2 active subscriptions</div>
+      </div>
+      <div class="topbar-actions">
+        <div class="search-box">
+          <span>🔍</span>
+          <input type="text" placeholder="Search milkmen or area…">
+        </div>
+        <button class="btn btn-primary" data-open-modal="subscribeModal">+ New subscription</button>
+      </div>
+    </div>
+
+    <!-- Stats -->
+    <div class="stat-row">
+      <div class="stat-card">
+        <div class="lbl">Active subscriptions</div>
+        <div class="val">2</div>
+        <div class="delta up">Both delivering on schedule</div>
+      </div>
+      <div class="stat-card">
+        <div class="lbl">This month, so far</div>
+        <div class="val">18.5 L</div>
+        <div class="delta up">↑ 2 L vs last month</div>
+      </div>
+      <div class="stat-card">
+        <div class="lbl">Deliveries this week</div>
+        <div class="val">5 / 7</div>
+        <div class="delta down">1 skipped, 1 upcoming</div>
+      </div>
+      <div class="stat-card">
+        <div class="lbl">Estimated bill (Aug)</div>
+        <div class="val">₹2,940</div>
+        <div class="delta up">On track, due 1 Sep</div>
+      </div>
+    </div>
+
+    <!-- Browse milkmen -->
+    <div class="panel" id="browse-section">
+      <div class="panel-head">
+        <h3>Browse milkmen near you</h3>
+        <span class="hint">Model Town, Ludhiana</span>
+      </div>
+      <div class="filters">
+        <span class="chip active" data-filter="all">All</span>
+        <span class="chip" data-filter="cow">Cow milk</span>
+        <span class="chip" data-filter="buffalo">Buffalo milk</span>
+        <span class="chip" data-filter="a2">A2 desi</span>
+        <span class="chip" data-filter="organic">Organic</span>
+        <span class="chip" data-filter="rated">Top rated</span>
+      </div>
+      <div class="card-grid">
+        <div class="milkman-card">
+          <div class="mc-top">
+            <div class="avatar">RK</div>
+            <div><div class="mc-name">Ramesh Kumar</div><div class="mc-area">Model Town, Ludhiana · 0.4 km</div></div>
+            <div class="mc-rating">★ 4.8</div>
+          </div>
+          <div class="mc-body">
+            <div class="tag-row"><span class="tag">Cow</span><span class="tag">Buffalo</span><span class="tag">Toned</span></div>
+            <div class="mc-price"><span class="amt">₹58</span><span class="unit">/ litre · from</span></div>
+            <button class="btn btn-primary btn-block" data-open-modal="subscribeModal">Subscribe</button>
+          </div>
+        </div>
+        <div class="milkman-card">
+          <div class="mc-top">
+            <div class="avatar">SD</div>
+            <div><div class="mc-name">Suresh Dairy Farm</div><div class="mc-area">Sarabha Nagar · 1.8 km</div></div>
+            <div class="mc-rating">★ 4.9</div>
+          </div>
+          <div class="mc-body">
+            <div class="tag-row"><span class="tag">A2</span><span class="tag">Cow</span><span class="tag">Organic</span></div>
+            <div class="mc-price"><span class="amt">₹90</span><span class="unit">/ litre · from</span></div>
+            <button class="btn btn-primary btn-block" data-open-modal="subscribeModal">Subscribe</button>
+          </div>
+        </div>
+        <div class="milkman-card">
+          <div class="mc-top">
+            <div class="avatar">HC</div>
+            <div><div class="mc-name">Happy Cow Dairy</div><div class="mc-area">Civil Lines · 2.3 km</div></div>
+            <div class="mc-rating">★ 4.7</div>
+          </div>
+          <div class="mc-body">
+            <div class="tag-row"><span class="tag">Cow</span><span class="tag">A2</span><span class="tag">Toned</span></div>
+            <div class="mc-price"><span class="amt">₹62</span><span class="unit">/ litre · from</span></div>
+            <button class="btn btn-primary btn-block" data-open-modal="subscribeModal">Subscribe</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- My subscriptions -->
+    <div class="panel" id="subs-section">
+      <div class="panel-head">
+        <h3>My subscriptions</h3>
+        <span class="hint">2 active</span>
+      </div>
+
+      <div class="sub-card">
+        <div class="avatar">RK</div>
+        <div>
+          <strong>Ramesh Kumar</strong> — Cow Milk
+          <div class="meta">
+            <span>1.5 L / day</span>
+            <span>Mon–Sat</span>
+            <span>Morning, 6:30–7:30 AM</span>
+            <span>₹58 / L</span>
+          </div>
+        </div>
+        <div class="actions">
+          <button class="btn btn-ghost btn-sm">Edit</button>
+          <button class="btn btn-outline btn-sm">Pause</button>
+          <button class="btn btn-danger btn-sm">Cancel</button>
+        </div>
+      </div>
+
+      <div class="sub-card">
+        <div class="avatar">SD</div>
+        <div>
+          <strong>Suresh Dairy Farm</strong> — A2 Desi Cow
+          <div class="meta">
+            <span>0.5 L / day</span>
+            <span>Tue, Thu, Sat</span>
+            <span>Evening, 6:00–7:00 PM</span>
+            <span>₹90 / L</span>
+          </div>
+        </div>
+        <div class="actions">
+          <button class="btn btn-ghost btn-sm">Edit</button>
+          <button class="btn btn-outline btn-sm">Pause</button>
+          <button class="btn btn-danger btn-sm">Cancel</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Delivery calendar -->
+    <div class="panel" id="calendar-section">
+      <div class="panel-head">
+        <h3>Delivery calendar — August 2026</h3>
+        <span class="hint">Ramesh Kumar · Cow Milk</span>
+      </div>
+      <div class="cal-grid" id="customerCalendar"></div>
+      <div class="cal-legend">
+        <span><i style="background:var(--primary-tint); border:1px solid var(--primary);"></i> Delivered</span>
+        <span><i style="background:var(--accent-tint); border:1px solid var(--accent);"></i> Pending today</span>
+        <span><i style="background:var(--bg-deep);"></i> Skipped / paused</span>
+      </div>
+    </div>
+
+    <!-- Billing -->
+    <div class="panel" id="billing-section">
+      <div class="panel-head">
+        <h3>Billing history</h3>
+        <span class="hint">Paid automatically on the 1st of each month</span>
+      </div>
+      <table>
+        <thead>
+          <tr><th>Month</th><th>Milkman</th><th>Litres</th><th>Amount</th><th>Status</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>August 2026 (est.)</td><td>Ramesh Kumar + Suresh Dairy</td><td>18.5 L</td><td>₹2,940</td><td><span class="badge gold">Pending</span></td></tr>
+          <tr><td>July 2026</td><td>Ramesh Kumar + Suresh Dairy</td><td>44 L</td><td>₹2,860</td><td><span class="badge green">Paid</span></td></tr>
+          <tr><td>June 2026</td><td>Ramesh Kumar</td><td>42 L</td><td>₹2,436</td><td><span class="badge green">Paid</span></td></tr>
+          <tr><td>May 2026</td><td>Ramesh Kumar</td><td>40 L</td><td>₹2,320</td><td><span class="badge green">Paid</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+</div>
+
+<!-- ============ SUBSCRIBE MODAL ============ -->
+<div class="modal-overlay" id="subscribeModal">
+  <div class="modal">
+    <div class="modal-head">
+      <h3>New subscription</h3>
+      <button class="modal-close" data-close-modal="subscribeModal">&times;</button>
+    </div>
+    <div class="modal-body">
+      <div class="field">
+        <label for="pickMilkman">Milkman</label>
+        <select id="pickMilkman">
+          <option>Ramesh Kumar — Model Town (★ 4.8)</option>
+          <option>Suresh Dairy Farm — Sarabha Nagar (★ 4.9)</option>
+          <option>Happy Cow Dairy — Civil Lines (★ 4.7)</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label>Milk type</label>
+        <div class="radio-cards" id="milkTypeGrid">
+          <label class="radio-card" data-price="58"><input type="radio" name="milktype"><div class="rc-name">Cow</div><div class="rc-price">₹58/L</div></label>
+          <label class="radio-card" data-price="66"><input type="radio" name="milktype"><div class="rc-name">Buffalo</div><div class="rc-price">₹66/L</div></label>
+          <label class="radio-card" data-price="50"><input type="radio" name="milktype"><div class="rc-name">Toned</div><div class="rc-price">₹50/L</div></label>
+          <label class="radio-card" data-price="70"><input type="radio" name="milktype"><div class="rc-name">Full Cream</div><div class="rc-price">₹70/L</div></label>
+          <label class="radio-card" data-price="90"><input type="radio" name="milktype"><div class="rc-name">A2 Desi</div><div class="rc-price">₹90/L</div></label>
+          <label class="radio-card" data-price="85"><input type="radio" name="milktype"><div class="rc-name">Organic</div><div class="rc-price">₹85/L</div></label>
+        </div>
+      </div>
+
+      <div class="form-grid">
+        <div class="field">
+          <label>Quantity per delivery</label>
+          <div class="stepper" id="subStepper">
+            <button type="button" data-step="dec">−</button>
+            <span class="qty">1 L</span>
+            <button type="button" data-step="inc">+</button>
+          </div>
+        </div>
+        <div class="field">
+          <label for="slot">Delivery time slot</label>
+          <select id="slot">
+            <option>Morning, 6:00–7:30 AM</option>
+            <option>Morning, 7:30–9:00 AM</option>
+            <option>Evening, 5:30–7:00 PM</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Delivery days <span style="font-weight:400; color:var(--ink-faint);">(<span id="subDaysCount">0</span> selected)</span></label>
+        <div class="dow-select" id="subDow">
+          <button type="button" class="dow-btn">Mon</button>
+          <button type="button" class="dow-btn">Tue</button>
+          <button type="button" class="dow-btn">Wed</button>
+          <button type="button" class="dow-btn">Thu</button>
+          <button type="button" class="dow-btn">Fri</button>
+          <button type="button" class="dow-btn">Sat</button>
+          <button type="button" class="dow-btn">Sun</button>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="startDate">Start date</label>
+        <input type="date" id="startDate">
+      </div>
+
+      <div class="summary-row"><span>Price per litre</span><span>₹<span id="subUnitPrice">58</span></span></div>
+      <div class="summary-row"><span>Estimated monthly total</span><span id="subTotal">₹0</span></div>
+    </div>
+    <div class="modal-foot">
+      <button class="btn btn-ghost" data-close-modal="subscribeModal">Cancel</button>
+      <button class="btn btn-primary" data-close-modal="subscribeModal">Confirm subscription</button>
+    </div>
+  </div>
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>
