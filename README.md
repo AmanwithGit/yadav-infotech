@@ -18,7 +18,7 @@ A daily-milk delivery marketplace connecting local milkmen with the households t
 ![License](https://img.shields.io/badge/license-MIT-blue?style=flat-square)
 ![Made with](https://img.shields.io/badge/made%20with-%E2%9D%A4-red?style=flat-square)
 
-**[🔗 Live Preview](https://amanwithgit.github.io/yadav-infotech/)**
+**[🔗 Live Preview](https://amanwithgit.github.io/Daily-Dairy/)**
 
 </div>
 
